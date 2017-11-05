@@ -17,8 +17,10 @@
 
         plugin.settings = {}
 
-        var update_active = function() {
-
+        var init_grid = function() {
+            for(i = 0; i < 100; i++) {
+                $("#isometric_map_grid").append("<div class='cube'></div>");
+            }
         }
 
         var init = function() {
@@ -27,6 +29,11 @@
                 on_load: function() {}                
             }, defaults, options);            
             
+            container.append("<div id='isometric_map_container'></div>");
+
+            $("#isometric_map_container").append("<div id='isometric_map_grid'></div>");
+        
+            init_grid();
         }
 
         init();
