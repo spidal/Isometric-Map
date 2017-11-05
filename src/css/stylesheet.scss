@@ -1,0 +1,51 @@
+$size: 48px;
+$cubeTop: #d3ceba;
+$cubeLeft: #6C7340;
+$cubeRight: #72A298;
+$spacing: 48px;
+
+#isometric_map_container {
+	#isometric_map_grid {
+		width: 500px;
+		height: 500px;		
+		transform-style: preserve-3d;
+		-moz-transform: rotateX(60deg) rotateZ(45deg);
+	    -webkit-transform: rotateX(60deg) rotateZ(45deg);
+	    -ms-transform: rotateX(60deg) rotateZ(45deg);
+	    transform: rotateX(60deg) rotateZ(45deg);
+	    margin: 0 auto;	
+	    .cube {
+	    	width: $size;
+		    height: $size;
+	    	position: relative;
+	    	float: left;
+	    }
+		.cube:before,
+		.cube:after {
+		  width: $size;
+		  height: $size;
+		  position: absolute;
+		}
+		.cube {
+			background-color: $cubeTop;
+			transform-style: preserve-3d;
+			transform: translateZ($size);
+			transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+			border: 1px solid #b2ae9d;
+		&:before {
+			content: "";
+			transform-origin: 100% 100%;
+			transform: rotateX(-90deg) translateY($size);
+			background-image: url("../images/tile_side.jpg");
+			border: 1px solid #b2ae9d;
+		}
+		&:after {
+			content: "";
+			transform-origin: 100% 0;
+			transform: rotateY(90deg) translateX($size);
+			background-image: url("../images/after_tile_side.jpg");
+			border: 1px solid #b2ae9d;
+		}
+		}
+	}
+}

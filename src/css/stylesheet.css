@@ -1,2 +1,52 @@
+#isometric_map_container #isometric_map_grid {
+  width: 500px;
+  height: 500px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: rotateX(60deg) rotateZ(45deg);
+  -webkit-transform: rotateX(60deg) rotateZ(45deg);
+  -ms-transform: rotateX(60deg) rotateZ(45deg);
+  transform: rotateX(60deg) rotateZ(45deg);
+  margin: 0 auto; }
+  #isometric_map_container #isometric_map_grid .cube {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    float: left; }
+  #isometric_map_container #isometric_map_grid .cube:before,
+  #isometric_map_container #isometric_map_grid .cube:after {
+    width: 48px;
+    height: 48px;
+    position: absolute; }
+  #isometric_map_container #isometric_map_grid .cube {
+    background-color: #d3ceba;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(48px);
+    transform: translateZ(48px);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+    transition: -webkit-transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+    -o-transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+    transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+    transition: transform 0.5s cubic-bezier(0.3, 0, 0, 1.4), -webkit-transform 0.5s cubic-bezier(0.3, 0, 0, 1.4);
+    border: 1px solid #b2ae9d; }
+    #isometric_map_container #isometric_map_grid .cube:before {
+      content: "";
+      -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(48px);
+      transform: rotateX(-90deg) translateY(48px);
+      background-image: url("../images/tile_side.jpg");
+      border: 1px solid #b2ae9d; }
+    #isometric_map_container #isometric_map_grid .cube:after {
+      content: "";
+      -webkit-transform-origin: 100% 0;
+      -ms-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+      -webkit-transform: rotateY(90deg) translateX(48px);
+      transform: rotateY(90deg) translateX(48px);
+      background-image: url("../images/after_tile_side.jpg");
+      border: 1px solid #b2ae9d; }
 
 /*# sourceMappingURL=stylesheet.css.map */
